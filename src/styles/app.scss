@@ -1,0 +1,155 @@
+@import 'normalize.css';
+@import 'constants.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-text;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid $color-input-border;
+}
+
+button {
+    outline: none;
+    background: none;
+    border: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 10px 0;
+    border-radius: $rd-normal;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.container {
+    max-width: 425px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logo {
+    text-align: center;
+    font-family: $font-title;
+}
+
+.home {
+    margin-top: 3rem;
+
+    span {
+        margin-top: 1rem;
+    }
+}
+
+.name-input {
+    padding: 10px 20px;
+    border-radius: $rd-normal;
+    border: transparent solid 1px;
+    transition-duration: 0.1s;
+    outline: 0;
+    background-color: $color-input-bg;
+    width: 100%;
+    margin: 0 auto;
+
+    &:focus {
+        border-color: $color-input-border;
+    }
+}
+
+.primary {
+    background-color: $color-primary;
+    color: white;
+}
+
+.danger {
+    background-color: $color-danger;
+    color: white;
+}
+
+button:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    grid-gap: 3rem;
+}
+
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    margin-top: 1rem;
+    background-color: $color-success;
+    border-radius: $rd-normal;
+    border: transparent solid 2px;
+    transition-duration: 0.1s;
+}
+
+.checked {
+    border: 2px solid #2b2424;
+}
+
+$colors: #4ecca3, #ff6464, #f4f6f8, #c56cf0, #17c0eb;
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+
+    @for $i from 1 through length($colors) {
+        span:nth-child(#{$i}) {
+            display: block;
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: $rd-normal;
+            background-color: unquote(nth($colors, $i));
+            &:last-child {
+                padding: 1rem;
+                text-align: center;
+                grid-column: span 2;
+            }
+        }
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(2);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.scaled {
+    animation: scale 1s infinite;
+    color: $color-danger;
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
