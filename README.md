@@ -1,3 +1,3 @@
-## Basic React Template
+## Exam App
 
-> This template includes Eslint, Prettier and SASS support and some simplification operations.
+> Uygulama bağlantısı :
