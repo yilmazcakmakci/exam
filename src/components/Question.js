@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-// import { shuffle } from 'lodash'
 import { Context } from '../context/store'
 
 const Question = ({ q, index }) => {

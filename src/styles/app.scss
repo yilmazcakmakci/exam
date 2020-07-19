@@ -101,7 +101,7 @@ button:disabled {
 }
 
 .checked {
-    border: 2px solid #2b2424;
+    border: 2px solid $color-primary;
 }
 
 $colors: #4ecca3, #ff6464, #f4f6f8, #c56cf0, #17c0eb;
@@ -118,6 +118,7 @@ $colors: #4ecca3, #ff6464, #f4f6f8, #c56cf0, #17c0eb;
             padding: 5px 10px;
             border-radius: $rd-normal;
             background-color: unquote(nth($colors, $i));
+
             &:last-child {
                 padding: 1rem;
                 text-align: center;
@@ -151,5 +152,5 @@ $colors: #4ecca3, #ff6464, #f4f6f8, #c56cf0, #17c0eb;
 }
 
 .fade-in {
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 1s;
 }
