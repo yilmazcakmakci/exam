@@ -117,7 +117,7 @@ $colors: #4ecca3, #ff6464, #f4f6f8, #c56cf0, #17c0eb;
             width: 100%;
             padding: 5px 10px;
             border-radius: $rd-normal;
-            background-color: unquote(nth($colors, $i));
+            background-color: nth($colors, $i);
 
             &:last-child {
                 padding: 1rem;

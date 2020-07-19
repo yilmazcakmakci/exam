@@ -29,6 +29,12 @@ function reducer(state, action) {
             return {
                 ...state,
             }
+        case 'RESET':
+            return {
+                name: '',
+                questions: null,
+                currentQuestion: 0,
+            }
         default:
             return state
     }

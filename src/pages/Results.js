@@ -6,7 +6,7 @@ import saveData from '../helpers/saveData'
 import calcResults from '../helpers/calculations'
 
 const Results = () => {
-    const { state } = useContext(Context)
+    const { state, dispatch } = useContext(Context)
     const [results, setResults] = useState(null)
 
     useEffect(() => {
@@ -21,6 +21,10 @@ const Results = () => {
 
     if (state.questions === null) {
         window.location.href = '/'
+    }
+
+    const tryAgain = () => {
+        dispatch({ type: 'RESET' })
     }
 
     return (
@@ -38,7 +42,7 @@ const Results = () => {
                             </span>
                         ))}
                     </div>
-                    <Button>TRY AGAIN</Button>
+                    <Button onClick={tryAgain}>TRY AGAIN</Button>
                 </div>
             ) : (
                 <>
